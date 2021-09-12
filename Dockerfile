@@ -1,11 +1,15 @@
 FROM python:3
 
-ADD web.py /
+ADD web.py /root/
 
-ADD requirements.txt
+ADD requirements.txt /root/
+
+WORKDIR /root/
+
+EXPOSE = 5000
+
+ENTRYPOINT ["python"]
 
 RUN chmod +x requirements.txt
 
-RUN python ./web.py && ./requirements.txt 
-
-EXPOSE = 5000
+RUN python ./web.py && ./requirements.txt
