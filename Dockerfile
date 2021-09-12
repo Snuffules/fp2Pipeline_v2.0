@@ -10,6 +10,8 @@ ENTRYPOINT ["python"]
 
 RUN chmod +x requirements.txt
 
+RUN pip install -r requirements.txt
+
 RUN python ./web.py && ./requirements.txt
 
 EXPOSE = 5000
