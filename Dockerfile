@@ -1,8 +1,8 @@
 FROM python:3
 
-ADD web.py /root/
+COPY web.py /root/
 
-ADD requirements.txt /root/
+COPY requirements.txt /root/
 
 WORKDIR /root/
 
