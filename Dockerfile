@@ -1,17 +1,11 @@
 FROM python:3
 
-COPY web.py /root/
+ADD web.py /
 
-COPY requirements.txt /root/
-
-WORKDIR /root/
-
-ENTRYPOINT ["python"]
+ADD requirements.txt
 
 RUN chmod +x requirements.txt
 
-RUN pip install -r requirements.txt
-
-RUN python ./web.py && ./requirements.txt
+RUN python ./web.py && ./requirements.txt 
 
 EXPOSE = 5000
